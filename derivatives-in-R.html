@@ -196,6 +196,23 @@ dg</code></pre>
 <pre><code>## -(4/(((t^2) + 1)^3) + (-4 * t) * (3 * (2 * t * ((t^2) + 1)^2))/(((t^2) + 
 ##     1)^3)^2)</code></pre>
 </div>
+<div id="higher-order-univariate-derivatives" class="section level3">
+<h3>Higher Order Univariate Derivatives</h3>
+<p><span class="math inline">\(G(z) = 4.6 - 1.9z^3\)</span></p>
+<pre class="r"><code>gz &lt;- expression(4.6 - (1.9 * z ^ 3))
+
+dz &lt;- D(expr = gz, &quot;z&quot;)
+
+dz</code></pre>
+<pre><code>## -(1.9 * (3 * z^2))</code></pre>
+<pre class="r"><code>d2g_dz2 &lt;- expression(-5.7 * z ^ 2)
+
+d2g &lt;- D(expr = d2g_dz2, &quot;z&quot;)
+
+d2g</code></pre>
+<pre><code>## -(5.7 * (2 * z))</code></pre>
+<pre class="r"><code># Did not need to reassign the expression! Just use the D() again. So d2g_dz2 &lt;- D(expr = dz, &quot;z&quot;)</code></pre>
+</div>
 
 
 

@@ -44,3 +44,23 @@ dg <- D(expr = gt, "t")
 dg
 ```
 
+### Higher Order Univariate Derivatives 
+$G(z) = 4.6 - 1.9z^3$
+```{r}
+
+gz <- expression(4.6 - (1.9 * z ^ 3))
+
+dz <- D(expr = gz, "z")
+
+dz
+
+d2g_dz2 <- expression(-5.7 * z ^ 2)
+
+d2g <- D(expr = d2g_dz2, "z")
+
+d2g
+
+# Did not need to reassign the expression! Just use the D() again. So d2g_dz2 <- D(expr = dz, "z")
+
+```
+
