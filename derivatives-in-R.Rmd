@@ -64,3 +64,58 @@ d2g
 
 ```
 
+
+### Partial Order Derivatives
+$f(x,y,z) = 2x^2y - 3x + 1 + 4z^4x$
+```{r}
+
+f_xyz <- expression((2 * (x ^ 2) * y) - (3 * x) + 1 + (4 * z ^ 4) * x)
+
+df_dx <- D(expr = f_xyz, "x")
+
+df_dy <- D(expr = f_xyz, "y")
+
+df_dz <- D(expr = f_xyz, "z")
+
+
+```
+
+### Make Some Plots! 
+$f(x) = 2.4e^-0.05x^ * sin(x)$ for x values from -0.5 to 0.5
+```{r}
+
+eq <- function(x) {
+  
+  2.4 * exp(-0.05 * x) * sin(x)
+  
+}
+
+ggplot(data = data.frame(x = c(-0.5, 0.5)), aes(x = x)) + 
+         stat_function(fun = eq)
+
+```
+
+
+### Time for a Penguin Graph
+```{r}
+
+ggplot(data = penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species))
+
+
+```
+
+
+## Time for a Penguin-Jitterplot Graph!
+
+```{r}
+
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(aes(color = species)) +
+  labs(x = "Species",
+       y = "Flipper Length (mm)",
+       title = "Flipper Length by Antartica Penguin Species")
+  
+
+```
+
