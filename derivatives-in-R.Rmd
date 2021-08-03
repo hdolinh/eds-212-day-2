@@ -1,0 +1,13 @@
+---
+title: "Day 2 Afternoon Tasks & Group Activities"
+author: "Halina Do-Linh"
+date: "8/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(palmerpenguins)
+```
